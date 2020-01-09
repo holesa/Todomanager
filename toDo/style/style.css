@@ -1,0 +1,74 @@
+ul{
+    list-style: none;
+}
+
+.tasks{
+    margin-top: 30px;
+}
+
+.new_task_field_name{
+    border-style: none;
+}
+
+.unfinished{
+    color:red;
+}
+
+.finished{
+    color:green;
+}
+
+a{
+    text-decoration: none; 
+}
+
+.main-header{ 
+  background-color: #ccc;
+}
+
+.footer{
+    margin-top:50px;
+    background-color: #ccc;
+}
+
+
+.error{
+    color:red;
+}
+
+
+#todo-app{
+    display:flex;
+}
+
+#left-menu{
+    background-color: antiquewhite;
+    width: 20%;
+}
+
+#content{
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 50px;
+}
+
+#project-form{
+    display: none;
+}
+
+textarea{
+    width: 300px;
+    height: 100px;
+}
+
+
+.comment-box{
+    display:none;
+}
+
+.open-comment-box, 
+.close-comment-box,
+.save-comment{
+color: brown;
+border: 1px solid black;
+}
