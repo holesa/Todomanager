@@ -1,0 +1,268 @@
+body{
+    background-color: #EDF2F4;
+}
+
+#left-menu{
+    display: none;
+}
+
+#task_name_field{
+    padding: 10px;
+}
+
+#task-form{
+    border-radius: 5px;
+    background-color: #181F1C;
+    color: white;
+    padding: 50px;
+}
+
+#edit-project-form{
+    display: none;
+}
+
+input[type=text], .add_task_field {
+    box-sizing:border-box;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  .header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+   .error{
+     color:red;
+}
+
+    .delete-task{
+        display: inline;  
+  }
+  
+  .add-project-form.add-project{
+      display: none;
+  }
+
+  
+  .tasks-list{
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .new_task_field_name{
+      border-style: none;
+  }
+  
+  
+  .footer{
+      background-color: #ccc;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+  }
+
+  .textarea-note{
+      width: 100% !important;
+      height: 200px !important;
+      margin-bottom: 10px;
+  }
+  
+  .note-box{
+      display:none;
+  }
+  
+  .add-task{
+    display:none;
+}
+
+  
+  .add-task-open:hover{
+      background-color: #ccc;
+      border-radius:5px;
+      cursor:pointer;
+  }
+  
+  .add-task-open.add-task{
+      display: block;
+  }
+  
+  .add-task-close.add-task{
+      display: none;
+      text-align: left;
+  }
+  
+  .buttons-box{
+      opacity: 0;
+      display: flex;
+      margin: 10px 0px; 
+   }
+  
+  .project:hover .buttons-box{
+      opacity: 1;
+  }
+
+  .task{
+    width:100%;
+    border: 2px solid #433F3F;
+    border-radius: 5px;
+    padding: 10px;
+}
+  
+  .delete-task-form{
+     opacity: 0;
+  }
+  
+  .edit-task-button{
+      opacity: 0;
+      margin-right: 10px;
+  }
+  
+  .task:hover .buttons-box{
+     opacity: 1;
+     display: flex;
+  }
+  
+  .task:hover .delete-task-form{
+    opacity: 1;
+  }
+  
+  .task:hover .edit-task-button{
+      opacity: 1;
+  }
+ 
+  .login-section{
+      text-align: center;
+      margin: 200px 0px 200px 0px;
+  }
+
+  .inline-input{
+      display: flex;
+      width: 100%;
+  }
+
+  .input-block{
+      width: 33% !important;
+      font-weight: 500;
+  }
+
+  .hide{
+      display: none !important;
+  }
+
+  .finished_border_color{
+      border-color: red;
+  }
+
+  .unfinished_border_color{
+    border-color: green;
+}
+
+  .line-through{
+      text-decoration: line-through;
+      color: gray;
+  }
+
+  .fa-edit, .fa-sync,.fa-comment-alt{
+    pointer-events:none;
+  }
+ 
+.add-task-box{
+    width: 250px;
+    font-size: 30px;
+    color: red;
+    text-align: right;
+    cursor: pointer;
+}
+
+.icon-btn{
+    margin: 0 10px 10px 0;
+}
+
+.close-add-project.add-project{
+    display: none;
+}
+
+.add-project-box{
+    padding: 10px;
+}
+
+.container{
+    margin: 10px;
+}
+
+.margin-bottom{
+    margin-bottom:10px ;
+}
+
+.uncategorized, .all-projects{
+    color: white;
+    display: block;
+}
+
+.fixed-projects{
+    margin: 10px 0;
+}
+
+.brand{
+    margin-bottom: 20px;
+}
+
+.header-text{
+    margin-bottom: 30px;
+}
+
+/* Desktop version */
+@media only screen and (min-width:650px){ 
+    
+    #todo-app{
+        display:flex;
+    }
+    
+    #left-menu{
+        display: block;
+        background-color: #181F1C;
+        width: 20%;
+        height: 1500px;
+        padding: 20px;
+    }
+    
+    #content{
+        width: 80%;
+        margin: 0 auto;
+        padding: 30px 0 0 50px;
+        background-color: #c0c2c11c;
+    }
+    
+    .task{
+        width: 40%;
+        margin-bottom: 50px;
+    }
+
+    .add-task{
+        width:50%;
+        display:none;
+    }
+
+    .user-info{
+        display: flex;
+        margin-top: 20px;
+    }
+    
+    .logout{
+        margin-left: 20px;
+    }
+
+}
+
+
+
+
+
+
+
