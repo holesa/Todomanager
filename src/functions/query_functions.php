@@ -35,18 +35,19 @@ function load_tasks_ps($query,$project){
         $stmt-> bind_param("i", $project);
         $stmt-> execute();
         $stmt -> store_result();
-        $stmt -> bind_result($id,$user_id,$task_name,$due_date,$finished,$project_id,$task_priority,$task_note);
+        $stmt -> bind_result($task_id,$user_id,$task_name,$task_priority,$project_id,$task_note,$due_date,$finished);
         $tasks = array();
         $i=0;
         while($stmt->fetch())
         {
-            $tasks[$i]["id"] = $id;
+            $tasks[$i]["task_id"] = $task_id;
+            $tasks[$i]["user_id"] = $user_id;
             $tasks[$i]["task_name"] = $task_name; 
+            $tasks[$i]["task_priority"] = $task_priority;
+            $tasks[$i]["project_id"] = $project_id;
+            $tasks[$i]["task_note"] = $task_note;
             $tasks[$i]["due_date"] = $due_date;
             $tasks[$i]["finished"] = $finished;
-            $tasks[$i]["project_id"] = $project_id;
-            $tasks[$i]["task_priority"] = $task_priority;
-            $tasks[$i]["task_note"] = $task_note;
         $i++;
         }
     }

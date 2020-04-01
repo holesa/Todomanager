@@ -20,7 +20,7 @@
 <!-- Delete project-->
 <form method="POST" action="">
     <input type="hidden" name="project_id" value="<?php echo $project_id?>">
-    <button type="submit" class="icon-btn btn btn-outline-danger" class="bttn-simple bttn-sm bttn-danger" name="delete_project"><i class="far fa-trash-alt"></i></button>
+    <button type="submit" onclick="return confirmDelete()" class="icon-btn btn btn-outline-danger" class="bttn-simple bttn-sm bttn-danger" name="delete_project"><i class="far fa-trash-alt"></i></button>
 </form>
 </div>
 

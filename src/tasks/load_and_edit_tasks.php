@@ -3,7 +3,7 @@
                 <?php 
                 // Loop tasks from database
                 foreach($tasks as $task):
-                $task_id = htmlspecialchars($task["id"]);
+                $task_id = htmlspecialchars($task["task_id"]);
                 $task_finished = htmlspecialchars($task["finished"]);
                 $task_project_id = htmlspecialchars($task["project_id"]);
                 $task_note = htmlspecialchars($task["task_note"]);
@@ -34,7 +34,9 @@
                     $task_new_value = 1; 
                 }
 
+                
             ?>
+
             <div class="task <?php echo $border_color?>"> 
                     <div class="buttons-box">
                       <!-- Change Task`s status -->
@@ -60,7 +62,7 @@
                                     
                 <form method="POST" action="">
                     <input type="text" name="new_task_name" class="form-control new_task_field_name <?php echo $line_through?>" value="<?php echo $task_name;?>"/>
-                    <input type="hidden" name="task_id" value=<?php echo $task_id;?>  />
+                    <input type="hidden" name="task_id" value=<?php echo $task_id;?>/>
                     <br>
                     <div class="inline-input <?php echo $hide?>">
                         <div class="input-block">
@@ -110,7 +112,7 @@
                     <!-- Delete Task -->
                     <form method="POST" class="delete-task-form" action="">
                         <input type="hidden" name="task_id" value="<?php echo $task_id?>">
-                        <input type="submit" class="delete-task-button btn btn-outline-danger" name="delete_task" value="Delete">
+                        <input type="submit" onclick="return confirmDelete()" class="delete-task-button btn btn-outline-danger" name="delete_task" value="Delete">
                     </form>
                     </div>  
                 </div>

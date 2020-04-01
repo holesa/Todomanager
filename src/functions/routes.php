@@ -61,7 +61,7 @@ if(isset($_GET["project"])){
 
 // Edit the task`s note
 if(isset($_POST["edit_note_button"])){
-        $query = "UPDATE tasks SET task_note=? WHERE id=? AND user_id='$user_id'";
+        $query = "UPDATE tasks SET task_note=? WHERE task_id=? AND user_id='$user_id'";
         $variables = array($new_note,$task_id);
         $data_types = "si";
         query_ps($query,$data_types,$variables);
@@ -89,14 +89,14 @@ if(isset($_POST["new_task_button"])){
 if(isset($_POST["edit_task_button"])){
         if($project_id === "null"){
            $query = "UPDATE tasks SET task_name=?, due_date=?, task_priority=?,project_id=DEFAULT  
-           WHERE id=? AND user_id='$user_id'";
+           WHERE task_id=? AND user_id='$user_id'";
            $variables = array($new_name,$new_date,$new_priority,$task_id);
            $data_types = "sssi";
            query_ps($query,$data_types,$variables); 
         }
         else{
             $query = "UPDATE tasks SET task_name=?, due_date=?, task_priority=?, project_id=? 
-            WHERE id=? AND user_id='$user_id'";
+            WHERE task_id=? AND user_id='$user_id'";
             $variables = array($new_name,$new_date,$new_priority,$project_id,$task_id);
             $data_types = "sssii";
             query_ps($query,$data_types,$variables);
@@ -105,7 +105,7 @@ if(isset($_POST["edit_task_button"])){
 
 // Delete Task
 if(isset($_POST["delete_task"])){  
-        $query = "DELETE FROM tasks WHERE id=? AND user_id='$user_id'";
+        $query = "DELETE FROM tasks WHERE task_id=? AND user_id='$user_id'";
         $variables = array($task_id);
         $data_types = "i";
         query_ps($query,$data_types,$variables);
@@ -114,7 +114,7 @@ if(isset($_POST["delete_task"])){
 
 // Change status of the task
 if(isset($_POST["change_status"])){
-        $query = "UPDATE tasks SET finished=? WHERE id=? AND user_id='$user_id'";
+        $query = "UPDATE tasks SET finished=? WHERE task_id=? AND user_id='$user_id'";
         $variables = array($task_status,$task_id);
         $data_types = "ii";
         query_ps($query,$data_types,$variables);
@@ -147,7 +147,7 @@ if(isset($_POST["edit_project"])){
 if(isset($_POST['logout'])) {
 	unset($_SESSION['access_token']);
 	session_destroy();
-	header('Location: src/login/login.php');
+	header('Location: views/login/login.php');
 	exit();
 	}
 ?>

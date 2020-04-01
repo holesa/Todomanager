@@ -10,8 +10,9 @@ require_once("src/functions/routes.php");
 ?>
 
 <!-- Header -->
-<?php require_once("src/templates/header.php");?>
+<?php require_once("views/templates/header.php");?>
 <div id="todo-app">
+
     <!-- Projects -->
     <div id="left-menu">
         <?php require_once("src/projects/add_projects.php");?>
@@ -26,4 +27,4 @@ require_once("src/functions/routes.php");
     
 </div>
 <!-- Footer -->
-<?php require_once("src/templates/footer.php");?>
+<?php require_once("views/templates/footer.php");?>

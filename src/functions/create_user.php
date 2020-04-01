@@ -1,5 +1,5 @@
 <?php
-  $query = "INSERT IGNORE INTO users (user_id, email) VALUES ('$user_id', '$email')";
+  $query = "INSERT IGNORE INTO users (user_id, user_email) VALUES ('$user_id', '$email')";
   function query($query){
 	global $connection;
 	if(mysqli_query($connection, $query)){

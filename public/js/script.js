@@ -14,7 +14,7 @@ function handleOneBox(){
       closeBtn.style.display = "block"
       openBtn.style.display = "none"
     }
-
+    
     if(e.target.classList.contains("close-add-project")){
       form.style.display = "none";
       closeBtn.style.display = "none"
@@ -68,6 +68,11 @@ function handleMultipleBoxes(){
 }
   handleMultipleBoxes();
 
+function confirmDelete(){
+  if(!confirm("Are you sure you want to delete this item?")){
+    return false
+  }
+}
 
 
 
