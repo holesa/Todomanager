@@ -1,5 +1,5 @@
 <?php
- // Non prepared statements
+ // Non prepared statements - there is not a user input
  if(!isset($_GET["project"])){
     $tasks= load_tasks(null);
     }
@@ -26,7 +26,7 @@
      return $projects;
      }  
 
-// Prepared statements
+// Prepared statements - there is a user input
 function load_tasks_ps($query,$project){
     global $connection;
     if (!($stmt = $connection->prepare($query))) {

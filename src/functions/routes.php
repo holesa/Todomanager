@@ -1,5 +1,5 @@
 <?php
-// Variables
+// Input data variables after sumbmiting form
 $user_id = mysqli_real_escape_string($connection, $_SESSION["id"]);
 if(isset($_POST["task_name"])){
     $task_name = mysqli_real_escape_string($connection, $_POST["task_name"]);
@@ -42,7 +42,7 @@ if(isset($_POST["note_text"])){
 }
 
 
-// Load project`s tasks
+// Load a project`s tasks
 if(isset($_GET["project"])){
         switch($project){
             case "all":
@@ -59,7 +59,7 @@ if(isset($_GET["project"])){
             }
 } 
 
-// Edit the task`s note
+// Edit a task`s note
 if(isset($_POST["edit_note_button"])){
         $query = "UPDATE tasks SET task_note=? WHERE task_id=? AND user_id='$user_id'";
         $variables = array($new_note,$task_id);
@@ -67,7 +67,7 @@ if(isset($_POST["edit_note_button"])){
         query_ps($query,$data_types,$variables);
     }
 
-// Add Task
+// Add a task
 if(isset($_POST["new_task_button"])){           
         if($project_id === "null"){
             $query = "INSERT INTO tasks (user_id, task_name, due_date, finished, task_priority, project_id, task_note) 
@@ -85,7 +85,7 @@ if(isset($_POST["new_task_button"])){
          }
 }
 
-// Edit Task
+// Edit a task
 if(isset($_POST["edit_task_button"])){
         if($project_id === "null"){
            $query = "UPDATE tasks SET task_name=?, due_date=?, task_priority=?,project_id=DEFAULT  
@@ -103,7 +103,7 @@ if(isset($_POST["edit_task_button"])){
         }
 }
 
-// Delete Task
+// Delete a task
 if(isset($_POST["delete_task"])){  
         $query = "DELETE FROM tasks WHERE task_id=? AND user_id='$user_id'";
         $variables = array($task_id);
@@ -112,7 +112,7 @@ if(isset($_POST["delete_task"])){
 
 }
 
-// Change status of the task
+// Change status of a task
 if(isset($_POST["change_status"])){
         $query = "UPDATE tasks SET finished=? WHERE task_id=? AND user_id='$user_id'";
         $variables = array($task_status,$task_id);
@@ -120,7 +120,7 @@ if(isset($_POST["change_status"])){
         query_ps($query,$data_types,$variables);
 }
 
-// Add Project
+// Add a project
 if(isset($_POST["project_submit"])){
         $query = "INSERT INTO projects (user_id, project_name) VALUES (?,?)";
         $variables = array($user_id,$project_name);
@@ -128,14 +128,14 @@ if(isset($_POST["project_submit"])){
         query_ps($query,$data_types,$variables);
 }
 
-// Delete project
+// Delete a project
 if(isset($_POST["delete_project"])){
         $query = "DELETE FROM projects WHERE project_id=? AND user_id='$user_id'";
         $variables = array($project_id);
         $data_types = "i";
         query_ps($query,$data_types,$variables);
 }
-// Edit project
+// Edit a project
 if(isset($_POST["edit_project"])){
         $query = "UPDATE projects SET project_name=? WHERE project_id=? AND user_id='$user_id'";
         $variables = array($project_name,$project_id);
